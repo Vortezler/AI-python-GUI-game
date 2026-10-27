@@ -103,7 +103,6 @@ function startRace(playerCompound) {
   state.engine.setStartingCompound(playerCompound);
 
   $('#race-track-name').textContent = `${track.name}`;
-  $('#race-total-laps').textContent = track.laps;
   $('#race-log').innerHTML = '';
   $('#sc-banner').classList.add('hidden');
   renderRaceHUD(1, 'dry', { active: false });
