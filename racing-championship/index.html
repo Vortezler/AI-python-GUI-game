@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Championship — A Racing Story</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ============ START SCREEN ============ -->
+<section id="screen-start" class="screen active">
+  <div class="panel narrow center">
+    <h1 class="title">CHAMPIONSHIP</h1>
+    <p class="subtitle">A Racing Story</p>
+    <p id="start-story" class="story-text"></p>
+    <button id="btn-start-career" class="btn-primary">Start Career</button>
+  </div>
+</section>
+
+<!-- ============ BRIEFING SCREEN ============ -->
+<section id="screen-briefing" class="screen">
+  <div class="panel wide">
+    <div class="briefing-header">
+      <span id="briefing-round" class="pill"></span>
+      <h2 id="briefing-track-name"></h2>
+    </div>
+    <p id="briefing-story" class="story-text"></p>
+
+    <div class="briefing-grid">
+      <div class="info-card">
+        <h4>Track Climate</h4>
+        <p id="briefing-climate"></p>
+      </div>
+      <div class="info-card">
+        <h4>Race Forecast</h4>
+        <p id="briefing-forecast"></p>
+        <p class="laps-line">Race distance: <span id="briefing-laps"></span></p>
+      </div>
+    </div>
+
+    <div id="briefing-standings" class="standings-box"></div>
+
+    <h3>Choose Your Starting Tires</h3>
+    <div id="briefing-tire-choice" class="tire-choice-row"></div>
+  </div>
+</section>
+
+<!-- ============ RACE SCREEN ============ -->
+<section id="screen-race" class="screen">
+  <div class="race-hud">
+    <div class="hud-left">
+      <h3 id="race-track-name"></h3>
+      <span id="race-lap-counter" class="lap-counter">Lap 1 / 56</span>
+    </div>
+    <div class="hud-center">
+      <span id="race-weather" class="weather-pill">☀️ Dry</span>
+    </div>
+    <div class="hud-right">
+      <select id="speed-select">
+        <option value="slow">Speed: Slow</option>
+        <option value="normal" selected>Speed: Normal</option>
+        <option value="fast">Speed: Fast</option>
+      </select>
+      <button id="btn-step" class="btn-secondary">⏭ Step Lap</button>
+      <button id="btn-play-pause" class="btn-secondary">⏸ Pause</button>
+    </div>
+  </div>
+
+  <div id="sc-banner" class="sc-banner hidden">🚨 SAFETY CAR</div>
+
+  <div class="race-body">
+    <div class="race-main">
+      <div class="player-status-card">
+        <div class="player-status-row">
+          <span class="player-label">Position</span>
+          <span id="player-position" class="player-value">P1</span>
+        </div>
+        <div class="player-status-row">
+          <span class="player-label">Tires</span>
+          <span id="player-compound" class="player-value"></span>
+        </div>
+        <div class="player-status-row">
+          <span class="player-label">Wear</span>
+          <div class="wear-bar"><div id="player-wear" class="wear-fill wear-ok" style="width:0%"></div></div>
+          <span id="player-wear-label" class="wear-label">0%</span>
+        </div>
+        <div class="player-status-row">
+          <span class="player-label">Gap</span>
+          <span id="player-gap" class="player-value"></span>
+        </div>
+      </div>
+
+      <div id="race-log" class="race-log"></div>
+    </div>
+
+    <div class="race-side">
+      <h4>Standings</h4>
+      <div id="race-standings"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ DECISION MODAL ============ -->
+<div id="decision-overlay" class="overlay hidden">
+  <div class="decision-modal">
+    <h3 id="decision-title"></h3>
+    <p id="decision-prompt"></p>
+    <div id="decision-options" class="decision-options"></div>
+  </div>
+</div>
+
+<!-- ============ RESULTS SCREEN ============ -->
+<section id="screen-results" class="screen">
+  <div class="panel wide">
+    <h2>Race Results — <span id="results-track-name"></span></h2>
+    <p id="results-story" class="story-text"></p>
+    <div id="results-table" class="standings-box"></div>
+    <div id="results-championship" class="standings-box"></div>
+    <p id="results-blurb" class="story-text"></p>
+    <button id="btn-continue" class="btn-primary">Continue</button>
+  </div>
+</section>
+
+<!-- ============ CHAMPIONSHIP SCREEN ============ -->
+<section id="screen-championship" class="screen">
+  <div class="panel narrow center">
+    <h1 id="champ-title" class="title"></h1>
+    <p id="champ-blurb" class="story-text"></p>
+    <div id="champ-standings" class="standings-box"></div>
+    <button id="btn-play-again" class="btn-primary">Play Again</button>
+  </div>
+</section>
+
+<script src="js/data.js"></script>
+<script src="js/story.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
